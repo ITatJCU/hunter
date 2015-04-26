@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
   tagName: 'main',
-  classNames: ['row'],
+  classNames: ['pusher'],
   elementId: 'main'
 });
