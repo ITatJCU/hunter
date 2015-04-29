@@ -1,2 +1,11 @@
+body, html {
+  margin: 0
+}
+
+$light-white: rgba(255, 255, 255, 0.8);
+
+$iphone6-screen: "only screen and (max-width : 375px)";
+$iphone5-screen: "only screen and (max-width : 320px)";
+
 @import './section/loading';
 @import './section/landing-page';

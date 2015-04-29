@@ -1,11 +1,13 @@
 
-.masthead {
+.landing-page {
+
+  font-family: 'Lato', sans-serif;
 
   position: relative;
   overflow: hidden;
   text-align: center;
   padding: 0em;
-  color: rgba(255, 255, 255, 0.9);
+  color: $light-white;
 
   margin-bottom: 0px;
   margin-left: 0px;
@@ -17,65 +19,70 @@
   background-color: #E64949;
   background-image: radial-gradient(farthest-corner, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
   background-position: 50% 50%;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -ms-transition: background-color 3s ease-in-out 1s;
-  -moz-transition: background-color 3s ease-in-out 1s;
-  -webkit-transition: background-color 3s ease-in-out 1s;
-  transition: background-color 3s ease-in-out 1s;
 
-  .grid {
+  .center-wrapper {
+    text-align: center;
     margin: 0em;
     padding: 35vh 0em;
     position: relative;
     z-index: 2;
   }
 
-  .column {
-    display: table;
-  }
-
-  .center-wrapper {
-    position: relative;
-    clear: both;
-    display: block;
-    text-align: center;
-  }
-
-  .header {
-    font-size: 3em;
-
-    //
-    // TODO make this work
-    //
-    @media  (max-width: 480px) {
-      font-size: 2em;
-    }
-
+  .app-name {
+    display: initial;
+    color: #FFFFFF;
+    font-weight: bold;
     color: #FFFFFF;
     line-height: 1.2;
-    margin: 0px 0px 0px;
     padding-bottom: 0px;
-    -moz-perspective: 500px;
-    -webkit-perspective: 500px;
-    perspective: 500px;
-    -moz-transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    bottom: -1.75em;
     margin-bottom: -0.75em;
 
+    font-size: 7rem;
+
+    @media #{$iphone6-screen} {
+      font-size: 5.5rem;
+    }
+    @media #{$iphone5-screen} {
+      font-size: 5rem;
+    }
+  }
+
+  .divider {
+    height: 10px;
+    @media #{$iphone6-screen} {
+      height: 15px;
+    }
+  }
+
+  .call-to-action  {
+    -webkit-transition: color .2s, border-color .2s;
+    transition: color .2s, border-color .2s;
+
+    color: $light-white;
+    text-decoration: none;
+    border: 2px $light-white solid;
+    border-radius: 7px;
+    padding: 0.7em 1em;
+
+    font-size: 1.2rem;
+
+    @media #{$iphone6-screen} {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      border-color: #FFF;
+      color: #FFF;
+    }
+
+    + .call-to-action {
+      margin-left: 0.5em; 
+    }
   }
 }
 
-.app-name {
-  visibility: hidden;
-  display: block;
-  font-size: 7rem;
-  color: #FFFFFF;
-  font-weight: bold;
-}
 
-.call-to-action + .call-to-action {
-  margin-left: 0.5em; 
-}
+
+
 
