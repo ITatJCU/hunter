@@ -3,14 +3,12 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('controller:index', {
+moduleFor('route:leader', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
-  needs: ['controller:application']
 });
 
-// Replace this with your real tests.
 test('it exists', function(assert) {
-  var controller = this.subject();
-  assert.ok(controller);
+  var route = this.subject();
+  assert.ok(route);
 });
