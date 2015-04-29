@@ -6,4 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
+  this.route('leader');
+  this.route('profile');
+  this.route('loading');
 });
