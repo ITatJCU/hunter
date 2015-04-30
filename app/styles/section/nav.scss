@@ -1,17 +1,17 @@
-$mobile-nav-height: 50px;
+$mobile-nav-height: 60px;
 $other-nav-height: 60px;
 
 .nav-bar {
 
 
-  background-color: $rad-red;
-  border-bottom: $desat-rad-red 3px solid;
-  color: $white;
+  color: $rad-red;
+  // border-bottom: $desat-rad-red 3px solid;
+  // color: $white;
 
   height: $other-nav-height;
 
   .page-name {
-    margin-top: $other-nav-height / 7;
+    margin-top: $other-nav-height / 5;
     text-align: center;
     font-size: 36px;
   }
@@ -19,7 +19,7 @@ $other-nav-height: 60px;
   @media #{$sm} {
     height: $mobile-nav-height;
     .page-name {
-      margin-top: $mobile-nav-height / 5;
+      margin-top: $mobile-nav-height / 4;
       font-size: 24px;
     }
   }
