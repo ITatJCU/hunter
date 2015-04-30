@@ -28,7 +28,7 @@ export default Ember.View.extend({
       return cb;
     }
     else {
-      this.set('__scrollEvent', (evt) => {
+      this.set('__scrollEvent', () => {
         var fadeThreshold = this.get('scrollFadeThreshold');
 
         if (window.scrollY <= fadeThreshold) {
