@@ -1,0 +1,74 @@
+//
+// http://j4n.co/blog/Creating-your-own-css-grid-system
+//
+.grid {
+
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @mixin generate-columns($colunm-number) {
+    @for $i from 1 to $colunm-number {
+      .g-#{$i}-#{$colunm-number} {
+        float: left;
+        min-height: 1px;
+        width: (100% / $colunm-number) * $i;
+      }
+      @media #{$lx} {
+        .g-lx-#{$i}-#{$colunm-number} {
+          float: left;
+          min-height: 1px;
+          width: (100% / $colunm-number) * $i;
+        }
+      }
+      @media #{$lg} {
+        .g-lg-#{$i}-#{$colunm-number} {
+          float: left;
+          min-height: 1px;
+          width: (100% / $colunm-number) * $i;
+        }
+      }
+      @media #{$md} {
+        .g-md-#{$i}-#{$colunm-number} {
+          float: left;
+          min-height: 1px;
+          width: (100% / $colunm-number) * $i;
+        }
+      }
+      @media #{$ms} {
+        .g-ms-#{$i}-#{$colunm-number} {
+          float: left;
+          min-height: 1px;
+          width: (100% / $colunm-number) * $i;
+        }
+      }
+      @media #{$sm} {
+        .g-sm-#{$i}-#{$colunm-number} {
+          float: left;
+          min-height: 1px;
+          width: (100% / $colunm-number) * $i;
+        }
+      }
+    }
+  }
+
+  .row {
+    @include generate-columns(3);
+    @include generate-columns(4);
+    @include generate-columns(5);
+    @include generate-columns(6);
+    @include generate-columns(7);
+    @include generate-columns(8);
+    @include generate-columns(10);
+    @include generate-columns(12);
+    @include generate-columns(24);
+
+    &:before, &:after {
+      content:"";
+      display: table ;
+      clear:both;
+    }
+  }
+}

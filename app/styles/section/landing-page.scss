@@ -40,17 +40,17 @@
 
     font-size: 7rem;
 
-    @media #{$iphone6-screen} {
+    @media #{$md} {
       font-size: 5.5rem;
     }
-    @media #{$iphone5-screen} {
+    @media #{$sm} {
       font-size: 5rem;
     }
   }
 
   .divider {
     height: 10px;
-    @media #{$iphone6-screen} {
+    @media #{$sm} {
       height: 15px;
     }
   }
@@ -68,7 +68,7 @@
 
     font-size: 1.2rem;
 
-    @media #{$iphone6-screen} {
+    @media #{$sm} {
       font-size: 1rem;
     }
 
@@ -78,7 +78,7 @@
     }
 
     + .call-to-action {
-      margin-left: 0.5em; 
+      margin-left: 0.5em;
     }
   }
 }

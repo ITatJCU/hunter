@@ -4,17 +4,22 @@
 }
 
 .spinner {
-  width: 20vw;
-  height: 20vw;
-  margin-left: 40vw;
 
   position: relative;
 
+  width: 20vw;
+  height: 20vw;
+  margin-left: 40vw;
+  @media #{$md} {
+    width: 5vw;
+    height: 5vw;
+    margin-left: 47.5vw;
+  }
 }
 
 .double-bounce1, .double-bounce2 {
 
-  margin-top: 40vh;  
+  margin-top: 40vh;
 
   width: 100%;
   height: 100%;

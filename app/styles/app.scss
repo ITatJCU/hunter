@@ -1,12 +1,24 @@
-body, html {
-  margin: 0
-}
+@import "bower_components/normalize.css/normalize";
 
+$body-font: 'PT Sans', 'Helvetica', sans-serif;
+
+$white: rgba(255, 255, 255, 1);
 $light-white: rgba(255, 255, 255, 0.8);
 $rad-red: #E64949;
 
-$iphone6-screen: "only screen and (max-width : 375px)";
-$iphone5-screen: "only screen and (max-width : 320px)";
+$sm: "only screen and (max-width: 35em)";
+$ms: "only screen and (min-width: 35em)";
+$md: "only screen and (min-width: 48em)";
+$lg: "only screen and (min-width: 64em)";
+$lx: "only screen and (min-width: 80em)";
 
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: $body-font;
+}
+
+@import './section/nav';
 @import './section/loading';
+@import './section/grid';
+@import './section/list';
+@import './section/main-contents';
 @import './section/landing-page';

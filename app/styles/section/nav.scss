@@ -1,0 +1,39 @@
+$mobile-nav-height: 50px;
+$other-nav-height: 60px;
+
+.nav-bar {
+  background-color: $rad-red;
+
+  height: $other-nav-height;
+
+  .page-name {
+    color: $white;
+    margin-top: $other-nav-height / 7;
+    text-align: center;
+    font-size: 36px;
+  }
+
+  @media #{$sm} {
+    height: $mobile-nav-height;
+    .page-name {
+      margin-top: $mobile-nav-height / 5;
+      font-size: 24px;
+    }
+  }
+
+  // fixed navbar effect
+
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 9999;
+}
+
+.main-contents {
+  margin-top: $other-nav-height + 5px;
+
+  @media #{$sm} {
+    margin-top: $mobile-nav-height + 5px;
+  }
+}

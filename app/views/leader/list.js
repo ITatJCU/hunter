@@ -4,8 +4,9 @@ import Ember from 'ember';
 
 export default ListView.extend({
   height: 800,
-  rowHeight: 40,
+  rowHeight: 50,
   itemViewClass: ListItemView.extend({
-    templateName: 'leader/list-item'
+    templateName: 'leader/list-item',
+    classNames: ['grid']
   }),
 });
