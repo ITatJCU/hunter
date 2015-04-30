@@ -17,9 +17,9 @@ p, h1, h2, h3, h4, h5, h6 {
   font-family: $body-font;
 }
 
-@import './section/nav';
-@import './section/loading';
-@import './section/grid';
-@import './section/list';
-@import './section/main-contents';
-@import './section/landing-page';
+@import './nav';
+@import './loading';
+@import './grid';
+@import './list';
+@import './main-contents';
+@import './landing-page';
