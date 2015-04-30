@@ -7,6 +7,6 @@ module('IncNumberHelper');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = incNumber(42);
-  assert.ok(result);
+  var result = incNumber([42]);
+  assert.ok(result === 43);
 });
