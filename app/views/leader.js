@@ -33,7 +33,9 @@ export default Ember.View.extend({
 
         if (window.scrollY <= fadeThreshold) {
           var opacity = (fadeThreshold - window.scrollY) / fadeThreshold;
-          this.$('.page-name').css('opacity', opacity);
+          this.$('.page-name')
+            .css('opacity', opacity)
+            .offset({ bottom: window.scrollY/2 });
         }
         else {
           this.$('.page-name').css('opacity', 0);

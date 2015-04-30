@@ -1,13 +1,10 @@
-.player-list *{
-  font-family: $body-font
-}
-
 
 $list-item-view-height: 50px;
 
 .player-list {
 
   padding-top: 10px;
+  padding-bottom: $list-item-view-height / 2;
 
   .player-list-row + .player-list-row .underlined {
     border-top: $desat-rad-red 1px solid;
@@ -35,8 +32,9 @@ $list-item-view-height: 50px;
     height: $circle-size;
     border-radius: $circle-size;
 
-    margin-left: auto;
-    margin-right: auto;
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
   }
 
   .player-index {
@@ -45,7 +43,6 @@ $list-item-view-height: 50px;
     text-align: center;
     font-weight: 300;
     font-size: smaller;
-    margin-top: $list-item-view-height / 5;
   }
 
   .player-alias {
