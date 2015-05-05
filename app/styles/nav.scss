@@ -3,7 +3,6 @@ $other-nav-height: 60px;
 
 .nav-bar {
 
-
   color: $rad-red;
   // border-bottom: $desat-rad-red 3px solid;
   // color: $white;
@@ -31,7 +30,46 @@ $other-nav-height: 60px;
   right: 0;
   position: fixed;
   z-index: 9999;
+
 }
+
+.nav-burger {
+
+  $height: 40px;
+  $width: 40px;
+  $n-buns: 3;
+  $bun-height: $height / (($n-buns * 2) + 1);
+
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $rad-red;
+  margin-left: 10px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: $desat-rad-red;
+  }
+
+  .nav-bun {
+    //
+    // at the moment don't worry about this
+    //
+    $spacing: 0;
+
+    content: ' ';
+    display: block;
+    background-color: $white;
+    margin-left: $bun-height;
+    margin-bottom: $spacing;
+    margin-top: $bun-height + $spacing;
+
+    width: $width - (2 * $bun-height);
+    height: $bun-height - (2 * $spacing);
+  }
+
+}
+
 
 .main-contents {
   margin-top: $other-nav-height + 5px;
