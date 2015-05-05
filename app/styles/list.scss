@@ -69,6 +69,11 @@ $list-item-view-height: 50px;
   }
 
   @media #{$ms} {
+
+    max-width: 690px;
+    margin-left: auto;
+    margin-right: auto;
+
     .player-score {
       float: right;
       text-align: right;
