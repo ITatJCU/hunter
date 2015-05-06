@@ -70,6 +70,9 @@ export default Ember.View.extend({
     Ember.run.later(() => {
       var callback = function callback() {
         self.$('.nav-sidebar').addClass('hidden');
+        //
+        // TODO destory these on willDestroyElement
+        //
         self.$('.viewport').off('click', callback);
         self.$('.dismiss').off('click', callback);
       };

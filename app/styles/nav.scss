@@ -140,6 +140,11 @@ $other-nav-height: 80px;
     height: 15px;
   }
 
+  .nav-link {
+    &, &:visited, &:focus { color: white; }
+    text-decoration: none;
+  }
+
   .dismiss-icon {
     fill: $white;
   }

@@ -2,9 +2,15 @@
 <div class="nav-sidebar hidden">
   <span data-glyph="x" class="dismiss oi" title="dismiss" aria-hidden="true"></span>
   <ul class="nav-links">
-    <li class="nav-item">Home</li>
-    <li class="nav-item">Leader</li>
-    <li class="nav-item">Profile</li>
+    <li class="nav-item">
+      {{#link-to 'index' class="nav-link"}}Home{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to 'leader' class="nav-link"}}Leader{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to 'profile' class="nav-link"}}Profile{{/link-to}}
+    </li>
   </ul>
 </div>
 
