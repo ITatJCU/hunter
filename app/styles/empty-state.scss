@@ -1,0 +1,29 @@
+.empty-state {
+  color: $rad-red;
+  text-align: center;
+  padding-top: 20px;
+
+  .empty-state-link {
+    &, &:visited, &:focus {
+      color: $rad-red;
+      font-style: italic;
+      text-decoration: none;
+    }
+  }
+
+  .empty-state-icon {
+    font-size: 15em;
+  }
+  .empty-state-message {
+    font-size: 1.5em;
+  }
+
+  @media #{$sm} {
+    .empty-state-icon {
+      font-size: 10em;
+    }
+    .empty-state-message {
+      font-size: 1em;
+    }
+  }
+}

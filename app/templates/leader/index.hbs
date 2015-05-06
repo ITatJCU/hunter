@@ -1,17 +1,29 @@
-<div class="grid player-list">
-  {{#each model.players as |player index|}}
-    <div class="row player-list-row">
-      <div class="list-item-col g-sm-1-5 g-ms-2-12 g-md-1-12 g-lg-1-24">
-        <div class="player-index-circle">
-          <div class="player-index">{{inc-number index}}</div>
+{{#if player.length}}
+  <div class="grid player-list">
+    {{#each model.players as |player index|}}
+      <div class="row player-list-row">
+        <div class="list-item-col g-sm-1-5 g-ms-2-12 g-md-1-12 g-lg-1-24">
+          <div class="player-index-circle">
+            <div class="player-index">{{inc-number index}}</div>
+          </div>
+        </div>
+        <div class="list-item-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24 underlined">
+          <div class="player-alias">{{player.alias}}</div>
+          <div class="player-score">{{player.scans.length}}</div>
         </div>
       </div>
-      <div class="list-item-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24 underlined">
-        <div class="player-alias">{{player.alias}}</div>
-        <div class="player-score">{{player.scans.length}}</div>
-      </div>
-    </div>
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
+{{else}}
+  <div class="empty-state">
+    <span data-glyph="question-mark" class="empty-state-icon oi" aria-hidden="true"></span>
+    <p class="empty-state-message">
+      No players yet,
+      {{#link-to 'profile' class="empty-state-link"}}
+        would you like to be the first?
+      {{/link-to}}
+    </p>
+  </div>
+{{/if}}
 
 {{outlet}}
