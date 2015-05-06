@@ -1,17 +1,30 @@
-<nav class="nav-bar">
-  <div class="container">
-    <div class="grid">
-      <div class="row">
-        <div class="g-3-12">
-          <div class="nav-burger">
-            <div class="nav-bun"></div>
-            <div class="nav-bun"></div>
-            <div class="nav-bun"></div>
+
+<div class="nav-sidebar hidden">
+  <ul class="nav-links">
+    <li class="nav-item">Home</li>
+    <li class="nav-item">Leader</li>
+    <li class="nav-item">Profile</li>
+  </ul>
+</div>
+
+<div class="viewport">
+
+  <nav class="nav-bar">
+    <div class="container">
+      <div class="grid">
+        <div class="row">
+          <div class="g-3-12">
+            <div class="nav-burger">
+              <div class="nav-bun"></div>
+              <div class="nav-bun"></div>
+              <div class="nav-bun"></div>
+            </div>
           </div>
+          <h2 class="page-name g-6-12">{{view.pageTitle}}</h2>
         </div>
-        <h2 class="page-name g-6-12">{{view.pageTitle}}</h2>
       </div>
     </div>
-  </div>
-</nav>
-{{outlet}}
+  </nav>
+
+  {{outlet}}
+</div>
