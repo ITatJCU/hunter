@@ -68,10 +68,13 @@ export default Ember.View.extend({
     console.log('ping');
     this.$('.nav-sidebar').removeClass('hidden');
     Ember.run.later(() => {
-      this.$('.viewport').on('click', function callback() {
+      var callback = function callback() {
         self.$('.nav-sidebar').addClass('hidden');
         self.$('.viewport').off('click', callback);
-      });
+        self.$('.dismiss').off('click', callback);
+      };
+      this.$('.viewport').on('click', callback);
+      this.$('.dismiss').on('click', callback);
     }, 500);
   },
 

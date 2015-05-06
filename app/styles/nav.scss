@@ -110,7 +110,6 @@ $other-nav-height: 80px;
     }
   }
 
-
   //
   // lock in top corner
   //
@@ -119,19 +118,30 @@ $other-nav-height: 80px;
   position: absolute;
   top: 0;
 
-  
-
   .nav-links {
     font-family: $body-font;
     font-style: italic;
     font-size: 1.25em;
     list-style: none;
+    margin-top: 30px;
   }
 
   .nav-item {
-    &+ .nav-item {
-      margin-top: 1.2em;
-    }
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .dismiss {
+    cursor: pointer;
+    float: right;  
+    margin-right: 1em;
+    margin-top: 1em;
+    width: 15px;
+    height: 15px;
+  }
+
+  .dismiss-icon {
+    fill: $white;
   }
 
 }
