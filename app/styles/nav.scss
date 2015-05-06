@@ -89,7 +89,7 @@ $other-nav-height: 80px;
 
 .nav-sidebar {
 
-  transition: left 0.5s;
+  @include transition(left 0.5s);
 
 
   color: $white;
@@ -151,3 +151,15 @@ $other-nav-height: 80px;
 
 }
 
+.viewport.defocus::after {
+  display: block;
+  position: absolute;
+  content: ' ';
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  color: blue;
+
+}

@@ -67,14 +67,21 @@ export default Ember.View.extend({
     var self = this;
     console.log('ping');
     this.$('.nav-sidebar').removeClass('hidden');
+    this.$('.viewport').addClass('defocus');
     Ember.run.later(() => {
       var callback = function callback() {
-        self.$('.nav-sidebar').addClass('hidden');
         //
-        // TODO destory these on willDestroyElement
+        // capture in the ember event loop
         //
-        self.$('.viewport').off('click', callback);
-        self.$('.dismiss').off('click', callback);
+        Ember.run(() => {
+          self.$('.nav-sidebar').addClass('hidden');
+          self.$('.viewport').removeClass('defocus');
+          //
+          // TODO destory these on willDestroyElement
+          //
+          self.$('.viewport').off('click', callback);
+          self.$('.dismiss').off('click', callback);
+        });
       };
       this.$('.viewport').on('click', callback);
       this.$('.dismiss').on('click', callback);

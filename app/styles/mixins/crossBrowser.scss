@@ -8,6 +8,11 @@
   }
 }
 
+@mixin transition($body) {
+  -webkit-transition: $body;
+  transition: $body;
+}
+
 @mixin user-select($body) {
 
   -webkit-touch-callout: $body;

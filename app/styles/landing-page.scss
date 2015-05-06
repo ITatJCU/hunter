@@ -56,29 +56,29 @@
   }
 
   .call-to-action  {
-    -webkit-transition: color .2s, border-color .2s;
-    transition: color .2s, border-color .2s;
+    @include transition(background-color .2s);
 
-    color: $light-white;
-    background-color: rgba(255, 255, 255, 0.05);
+    width: 100px;
+    display: inline-block;
+
+    color: $rad-red;
+    background-color: $light-white;
     text-decoration: none;
-    border: 2px $light-white solid;
     border-radius: 7px;
-    padding: 0.7em 1em;
+    padding: 0.5em 1em;
 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 
     @media #{$sm} {
       font-size: 1rem;
     }
 
     &:hover {
-      border-color: #FFF;
-      color: #FFF;
+      background-color: $white;
     }
 
     + .call-to-action {
-      margin-left: 0.5em;
+      margin-left: 10px;
     }
   }
 }
