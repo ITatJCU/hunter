@@ -1,8 +1,17 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
 
 var app = new EmberApp();
+
+app.import('bower_components/open-iconic/font/css/open-iconic.css');
+
+['eot', 'otf', 'svg', 'ttf', 'woff'].map(function (fileExtenstion) {
+  app.import(`bower_components/open-iconic/font/fonts/open-iconic.${fileExtenstion}`, {
+    destDir: 'fonts'
+  });
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

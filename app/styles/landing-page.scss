@@ -1,0 +1,95 @@
+
+.landing-page {
+
+  font-family: $body-font;
+
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 0em;
+  color: $light-white;
+
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100vw;
+  height: 100vh;
+
+  border-bottom: none;
+  background-color: $rad-red;
+  //background-image: radial-gradient(farthest-corner, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background-position: 50% 50%;
+
+  .center-wrapper {
+    text-align: center;
+    margin: 0em;
+
+    position: relative;
+    z-index: 2;
+
+    padding: 35vh 0em;
+
+    @media #{$horizontal-phone} {
+      padding: 20vh 0em;
+    }
+  }
+
+  .app-name {
+    display: initial;
+    color: #FFFFFF;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 1.2;
+    padding-bottom: 0px;
+    bottom: -1.75em;
+    margin-bottom: -0.75em;
+
+    font-size: 7rem;
+
+    @media #{$md} {
+      font-size: 5.5rem;
+    }
+    @media #{$sm} {
+      font-size: 5rem;
+    }
+  }
+
+  .divider {
+    height: 10px;
+    @media #{$sm} {
+      height: 15px;
+    }
+  }
+
+  .call-to-action  {
+    @include transition(background-color .2s);
+
+    width: 100px;
+    display: inline-block;
+
+    color: $rad-red;
+    background-color: $light-white;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 0.5em 1em;
+
+    font-size: 1.5rem;
+
+    @media #{$sm} {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: $white;
+    }
+
+    + .call-to-action {
+      margin-left: 10px;
+    }
+  }
+}
+
+
+
+
+

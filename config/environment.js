@@ -27,7 +27,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
      ENV.contentSecurityPolicy = {
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' 'unsafe-inline'",
       'font-src': "'self' https://fonts.gstatic.com data:",
       'connect-src': "'self'",
       'img-src': "'self'",

@@ -1,0 +1,33 @@
+
+@mixin textSelection {
+  &::selection {
+    @content;
+  }
+  &::-moz-selection {
+    @content;
+  }
+}
+
+@mixin transition($body) {
+  -webkit-transition: $body;
+  transition: $body;
+}
+
+@mixin user-select($body) {
+
+  -webkit-touch-callout: $body;
+  -webkit-user-select: $body;
+  -khtml-user-select: $body;
+  -moz-user-select: $body;
+  -ms-user-select: $body;
+  user-select: $body;
+
+}
+
+@mixin filter($body) {
+
+  -webkit-filter: $body;
+  filter: $body;
+
+}
+

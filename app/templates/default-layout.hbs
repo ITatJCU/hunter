@@ -1,0 +1,37 @@
+
+<div class="nav-sidebar hidden">
+  <span data-glyph="x" class="dismiss oi" title="dismiss" aria-hidden="true"></span>
+  <ul class="nav-links">
+    <li class="nav-item">
+      {{#link-to 'index' class="nav-link"}}Home{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to 'leader' class="nav-link"}}Leader{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to 'profile' class="nav-link"}}Profile{{/link-to}}
+    </li>
+  </ul>
+</div>
+
+<div class="viewport">
+
+  <nav class="nav-bar">
+    <div class="container">
+      <div class="grid">
+        <div class="row">
+          <div class="g-3-12">
+            <div class="nav-burger">
+              <div class="nav-bun"></div>
+              <div class="nav-bun"></div>
+              <div class="nav-bun"></div>
+            </div>
+          </div>
+          <h2 class="page-name g-6-12">{{view.pageTitle}}</h2>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {{outlet}}
+</div>

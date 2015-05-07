@@ -1,18 +1,10 @@
-<div class="full height">
-  <div class="masthead segment">
-    <div class="ui page grid">
-      <div class="center-wrapper">
-        <h1 class="ui inverted header">
-          <span class="app-name transition visible">
-            {{appName}}!
-          </span>
-        </h1>
-        <div class="ui hidden divider"></div>
-        <a class="ui huge basic inverted download button call-to-action">Leader</a>
-        <a class="ui huge basic inverted download button call-to-action">You</a>
-      </div>
-    </div>
-  </div>
+<div class="center-wrapper">
+  <h1 class="app-name">
+    {{appName}}!
+  </h1>
+  <div class="divider"></div>
+  {{#link-to 'leader' class="call-to-action"}}Leader{{/link-to}}
+  {{#link-to 'profile' class="call-to-action"}}You{{/link-to}}
 </div>
 
 {{outlet}}

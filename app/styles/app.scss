@@ -1,1 +1,33 @@
-@import './section/landing-page';
+@import "bower_components/normalize.css/normalize";
+
+$body-font: 'PT Sans', 'Helvetica', sans-serif;
+
+$black: #222;
+$light-black: #555;
+
+$white: rgba(255, 255, 255, 1);
+$light-white: rgba(255, 255, 255, 0.9);
+$rad-red: #E64949;
+$desat-rad-red: #F3AAAA;
+
+$horizontal-phone: "only screen and (max-height: 425px)";
+
+$sm: "only screen and (max-width: 35em)";
+$ms: "only screen and (min-width: 35em)";
+$md: "only screen and (min-width: 48em)";
+$lg: "only screen and (min-width: 64em)";
+$lx: "only screen and (min-width: 80em)";
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: $body-font;
+}
+
+@import './mixins/crossBrowser';
+
+@import './nav';
+@import './loading';
+@import './grid';
+@import './list';
+@import './main-contents';
+@import './landing-page';
+@import './empty-state';

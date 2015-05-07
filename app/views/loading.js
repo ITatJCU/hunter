@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-  classNames: ['landing-page'],
   tagName: 'main',
+  classNames: ['ui segment', 'loading-page'],
   elementId: 'main'
 });
