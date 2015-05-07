@@ -23,3 +23,11 @@
   user-select: $body;
 
 }
+
+@mixin filter($body) {
+
+  -webkit-filter: $body;
+  filter: $body;
+
+}
+

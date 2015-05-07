@@ -1,4 +1,4 @@
-{{#if player.length}}
+{{#if model.players.length}}
   <div class="grid player-list">
     {{#each model.players as |player index|}}
       <div class="row player-list-row">
@@ -18,7 +18,7 @@
   <div class="empty-state">
     <span data-glyph="question-mark" class="empty-state-icon oi" aria-hidden="true"></span>
     <p class="empty-state-message">
-      No players yet,
+      No players yet, <br/>
       {{#link-to 'profile' class="empty-state-link"}}
         would you like to be the first?
       {{/link-to}}

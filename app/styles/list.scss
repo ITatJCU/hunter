@@ -56,12 +56,14 @@ $list-item-view-height: 50px;
   }
 
   .player-alias, .player-score {
+    color: $black;
     font-size: smaller;
     font-family: $body-font;
   }
 
   @media #{$sm} {
     .player-score::after {
+      color: $black;
       content: ' QRs';
       font-weight: 300;
       font-style: italics;

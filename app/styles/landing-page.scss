@@ -23,9 +23,15 @@
   .center-wrapper {
     text-align: center;
     margin: 0em;
-    padding: 35vh 0em;
+
     position: relative;
     z-index: 2;
+
+    padding: 35vh 0em;
+
+    @media #{$horizontal-phone} {
+      padding: 20vh 0em;
+    }
   }
 
   .app-name {

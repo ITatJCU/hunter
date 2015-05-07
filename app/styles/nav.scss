@@ -151,15 +151,28 @@ $other-nav-height: 80px;
 
 }
 
-.viewport.defocus::after {
-  display: block;
-  position: absolute;
-  content: ' ';
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9998;
-  color: blue;
 
+
+.viewport.defocus {
+  $transition-time: 0.25s;
+  @include transition((
+    -webkit-filter $transition-time,
+    filter $transition-time,
+    color $transition-time
+  ));
+  @include filter(brightness(2.4) blur(2px));
+
+  overflow: hidden;
+  height: 100vh;
+  color: $light-black !important;
+//   display: block;
+//   position: absolute;
+//   content: ' ';
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: 9998;
+//   color: blue;
+// 
 }
