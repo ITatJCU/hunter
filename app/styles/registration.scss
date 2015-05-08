@@ -28,7 +28,7 @@
 
 .registration-form {
   margin: 0 auto;
-  max-width: 320px;
+  max-width: 280px;
   margin-top: 25vh;
 
   @media #{$horizontal-phone} {
@@ -38,6 +38,7 @@
 
 .registration-input {
   width: 100%;
+  color: $black;
 }
 
 .registration-field {
@@ -50,9 +51,15 @@
 
 .registration-input-text {
   @extend .registration-field;
+
   width: 100%;
   border: none;
   padding: 8px 10px;
+  outline: none;
+
+  @include placeholder {
+    font-style: italic;
+  }
 }
 
 .registration-button {
@@ -79,6 +86,11 @@
   background-color: $white;
   color: $rad-red;
 
+  &[disabled], &.registration-button-loading {
+    //color: $desat-rad-red;
+    opacity: 0.8;
+  }
+
   &:active {
     color: $white;
     background-color: $rad-red;
@@ -86,4 +98,22 @@
     box-shadow: none;
   }
 
+  &.registration-button-loading {
+    text-align: center;
+    position: relative;
+    .registration-button-icon {
+      position: absolute;
+      color: $rad-red;
+
+      margin-left: 10px;
+      top: 12px;
+
+      //
+      // the icon is displayed in the before tag
+      //
+      &:before {
+        @include animation(spin 0.5s infinite);
+      }
+    }
+  }
 }

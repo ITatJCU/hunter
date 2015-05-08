@@ -2,11 +2,22 @@
 
 <form class="registration-form">
   {{input
-      placeholder="Your alias"
-      class="registration-input-text"
-      type="text"
-      value=playerAlias}}
-  <input type="submit"
-         class="registration-button"
-         {{action 'confirm'}}>
+    placeholder="Your alias"
+    class="registration-input-text"
+    type="text"
+    value=playerAlias
+    disabled=loading}}
+
+  {{#unless loading}}
+    <input
+      type="submit"
+      class='registration-button'
+      {{action 'confirm'}}
+      {{bind-attr
+        disabled='disableSubmit'}}>
+  {{else}}
+    <div class='registration-button registration-button-loading'>
+      Loading <span class='oi registration-button-icon' data-glyph='loop-circular'></span>
+    </div>
+  {{/unless}}
 </form>
