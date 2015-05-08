@@ -57,6 +57,13 @@
   padding: 8px 10px;
   outline: none;
 
+  background-color: $white;
+
+  &[disabled] {
+    color: $light-black;
+    background-color: $light-white;
+  }
+
   @include placeholder {
     font-style: italic;
   }

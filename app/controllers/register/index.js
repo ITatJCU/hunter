@@ -7,9 +7,9 @@ export default Ember.Controller.extend({
   playerAlias: '',
 
   configButtonState: function () {
-    let alias =  this.get('playerAlias');
+    let alias      = this.get('playerAlias');
     let enoughText = !!alias.length;
-    let disable = !enoughText || this.get('loading');
+    let disable    = !enoughText || this.get('loading');
     this.set('disableSubmit', disable);
   }.observes('playerAlias', 'loading'),
 
