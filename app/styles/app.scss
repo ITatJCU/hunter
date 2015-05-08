@@ -18,6 +18,8 @@ $md: "only screen and (min-width: 48em)";
 $lg: "only screen and (min-width: 64em)";
 $lx: "only screen and (min-width: 80em)";
 
+$input-border-radius: 3px;
+
 p, h1, h2, h3, h4, h5, h6 {
   font-family: $body-font;
 }
@@ -30,4 +32,5 @@ p, h1, h2, h3, h4, h5, h6 {
 @import './list';
 @import './main-contents';
 @import './landing-page';
+@import './registration';
 @import './empty-state';

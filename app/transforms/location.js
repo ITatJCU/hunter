@@ -4,21 +4,15 @@ import Ember from 'ember';
 
 export default DS.Transform.extend({
   deserialize: function(serialized) {
-    return Ember.Object.create({
-      latitude: serialized.latitude,
-      longitude: serialized.longitude
+    return Ember.ObjectProxy.create({
+      content: serialized
     });
   },
 
   serialize: function(deserialized) {
     switch (Ember.typeOf(deserialized)) {
       case 'instance':
-        return {
-          latitude: deserialized.get('latitude'),
-          longitude: deserialized.get('longitude')
-        };
-      case 'string':
-        return deserialized;
+        return deserialized.content;
       default:
         throw new Error(`locationTransformer cannot serialize a ${Ember.typeOf(deserialized)}`);
     }

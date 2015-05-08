@@ -19,7 +19,9 @@ test('it exists', function(assert) {
 test('it serialises', function (assert) {
   var transform = this.subject();
 
-  var emObject = Ember.Object.create({ latitude: 0, longitude: 0 });
+  var emObject = Ember.ObjectProxy.create({
+    content: { latitude: 0, longitude: 0 }
+  });
 
   var jsObject = transform.serialize(emObject);
 

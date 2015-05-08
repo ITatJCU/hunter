@@ -5,7 +5,7 @@ import {
 
 moduleForModel('player', {
   // Specify the other units that are required for this test.
-  needs: ['model:scan']
+  needs: ['transform:scans', 'mixin:prop-checker'],
 });
 
 test('it exists', function(assert) {
