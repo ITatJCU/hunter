@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
   loading: false,
   disableSubmit: true,
   playerAlias: '',
+  previousTransition: null,
 
   configButtonState: function () {
     let alias      = this.get('playerAlias');
@@ -36,7 +37,7 @@ export default Ember.Controller.extend({
         return userService.setCurrentUser(id);
       }, (error) => {
         //
-        // TODO show error message
+        // handle different errors
         //
         console.error(error.responseJSON.message);
         this.set('message', 'Username is taken :(');
@@ -46,8 +47,12 @@ export default Ember.Controller.extend({
         //
         // go back to previous page
         //
-        var previousTransition = this.get('previousTransition');
+        let previousTransition = this.get('previousTransition');
+
         if (previousTransition) {
+          //
+          // prevent GC loitering
+          //
           this.set('previousTransition', null);
           previousTransition.retry();
         } else {
