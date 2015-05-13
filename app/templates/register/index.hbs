@@ -1,5 +1,9 @@
 <h1 class="registration-header">Quick Setup</h1>
 
+{{#if message}}
+  <div class="registration-message">{{message}}</div>
+{{/if}}
+
 <form class="registration-form">
   {{input
     placeholder="Your alias"

@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import $ from 'jquery';
 
 
 export default Ember.Controller.extend({
@@ -36,11 +35,12 @@ export default Ember.Controller.extend({
       userService.createUser(playerAlias).then((id) => {
         return userService.setCurrentUser(id);
       }, (error) => {
-        this.set('loading', false);
         //
         // TODO show error message
         //
         console.error(error.responseJSON.message);
+        this.set('message', 'Username is taken :(');
+        this.set('loading', false);
         return error;
       }).then(() => {
         //
