@@ -13,11 +13,9 @@ export default Ember.Mixin.create({
     let userService = this.get('__RequireUserMixin_userService');
     return userService.userExists().then((exists) => {
       if (exists) {
-        console.log('user exists');
         return null;
       }
       else {
-        console.log('user does not exist');
         return this.transitionTo('register');
       }
     });
