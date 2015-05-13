@@ -31,3 +31,22 @@
 
 }
 
+@mixin placeholder {
+  &:placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin animation ($body) {
+  animation: $body;
+  -o-animation: $body;
+  -moz-animation: $body;
+  -webkit-animation: $body;
+}
+

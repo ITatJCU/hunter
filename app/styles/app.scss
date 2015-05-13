@@ -2,8 +2,9 @@
 
 $body-font: 'PT Sans', 'Helvetica', sans-serif;
 
-$black: #222;
+$black: #333;
 $light-black: #555;
+$grey: #777;
 
 $white: rgba(255, 255, 255, 1);
 $light-white: rgba(255, 255, 255, 0.9);
@@ -18,11 +19,14 @@ $md: "only screen and (min-width: 48em)";
 $lg: "only screen and (min-width: 64em)";
 $lx: "only screen and (min-width: 80em)";
 
+$input-border-radius: 3px;
+
 p, h1, h2, h3, h4, h5, h6 {
   font-family: $body-font;
 }
 
 @import './mixins/crossBrowser';
+@import './mixins/animations';
 
 @import './nav';
 @import './loading';
@@ -30,4 +34,5 @@ p, h1, h2, h3, h4, h5, h6 {
 @import './list';
 @import './main-contents';
 @import './landing-page';
+@import './registration';
 @import './empty-state';

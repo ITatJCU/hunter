@@ -1,0 +1,136 @@
+.registration-page {
+  * {
+    box-sizing: border-box;
+  }
+
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+
+  font-family: $body-font;
+  background-color: $rad-red;
+
+}
+
+.registration-header {
+  color: $white;
+  text-align: center;
+  font-size: 3em;
+
+  @media #{$horizontal-phone} {
+    font-size: 2.5em;
+  }
+}
+
+.registration-container {
+  @extend .container;
+}
+
+.registration-form {
+  margin: 0 auto;
+  max-width: 280px;
+  margin-top: 25vh;
+
+  @media #{$horizontal-phone} {
+    margin-top: 20vh;
+  }
+}
+
+.registration-input {
+  width: 100%;
+  color: $black;
+}
+
+.registration-field {
+  border-radius: $input-border-radius;
+
+  &+ .registration-field {
+    margin-top: 20px;
+  }
+}
+
+.registration-input-text {
+  @extend .registration-field;
+
+  width: 100%;
+  border: none;
+  padding: 8px 10px;
+  outline: none;
+
+  background-color: $white;
+
+  &[disabled] {
+    color: $light-black;
+    background-color: $light-white;
+  }
+
+  @include placeholder {
+    font-style: italic;
+  }
+}
+
+.registration-message {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 1.1em;
+  margin-top: 2em;
+  left: 0;
+}
+
+.registration-button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.registration-button {
+  @extend .registration-field;
+  @extend .registration-button;
+  @include user-select(none);
+
+  font-weight: bold;
+  font-size: 1.2em;
+
+  display: block;
+  margin: 0 auto;
+  padding: 10px 12px;
+
+  width: 200px;
+  border: none;
+
+  background-color: $white;
+  color: $rad-red;
+
+  &[disabled], &.registration-button-loading {
+    //color: $desat-rad-red;
+    opacity: 0.8;
+  }
+
+  &:active {
+    color: $white;
+    background-color: $rad-red;
+    border: 1px solid $white;
+    box-shadow: none;
+  }
+
+  &.registration-button-loading {
+    text-align: center;
+    position: relative;
+    .registration-button-icon {
+      position: absolute;
+      color: $rad-red;
+
+      margin-left: 10px;
+      top: 12px;
+
+      //
+      // the icon is displayed in the before tag
+      //
+      &:before {
+        @include animation(spin 0.5s infinite);
+      }
+    }
+  }
+}

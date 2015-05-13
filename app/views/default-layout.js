@@ -65,7 +65,6 @@ export default Ember.View.extend({
 
   showSideBar: function () {
     var self = this;
-    console.log('ping');
     this.$('.nav-sidebar').removeClass('hidden');
     this.$('.viewport').addClass('defocus');
     Ember.run.later(() => {
