@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     let {event, code} = transition.params['scan.new'];
 
     return userService.findCurrentUserId().then(userId => {
-      return $.ajax({
+      return Ember.$.ajax({
         url: `/scan/${event}/${code}`,
         method: 'get',
         headers: {

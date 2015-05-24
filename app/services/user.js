@@ -53,7 +53,7 @@ export default Ember.Service.extend({
    * @return {Promise}
    */
   forgetUser: function () {
-    return new Ember.RSVP.Promise((resolve) => {
+    return new Ember.RSVP.Promise((resolve, reject) => {
       let lookupKey = this.get('__userLookUpKey');
       let userId    = localStorage.getItem(lookupKey);
       if (userId !== null) {
