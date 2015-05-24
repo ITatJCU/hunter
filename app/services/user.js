@@ -19,6 +19,24 @@ export default Ember.Service.extend({
   },
 
   /**
+   * Finds the id of the current user
+   * @return {Promise}
+   */
+  findCurrentUserId: function () {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      let lookupKey = this.get('__userLookUpKey');
+      let userId    = localStorage.getItem(lookupKey);
+      if (userId !== null) {
+        resolve(userId);
+      }
+      else {
+        reject(new Error('user doesn\'t exist dingus'));
+      }
+    });
+  },
+
+
+  /**
    * Determines if a user exists
    * @return {Promise}
    */
@@ -30,11 +48,21 @@ export default Ember.Service.extend({
     }, 'UserService: \'userExists\'');
   },
 
+  /**
+   * This person never existed...
+   * @return {Promise}
+   */
   forgetUser: function () {
-    return new Ember.RSVP.Promise((resolve) => {
+    return new Ember.RSVP.Promise((resolve, reject) => {
       let lookupKey = this.get('__userLookUpKey');
-      localStorage.removeItem(lookupKey);
-      resolve(null);
+      let userId    = localStorage.getItem(lookupKey);
+      if (userId !== null) {
+        localStorage.removeItem(lookupKey);
+        resolve(null);
+      }
+      else {
+        reject(new Error("you cannot forget the forgotten"));
+      }
     });
   },
 

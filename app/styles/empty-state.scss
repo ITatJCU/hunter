@@ -13,9 +13,16 @@
 
   .empty-state-icon {
     font-size: 15em;
+    &[data-glyph=ban] {
+      line-height: 0.7;
+    }
   }
   .empty-state-message {
     font-size: 1.5em;
+
+    .empty-state-linebreak {
+      margin-bottom: 0.25em;
+    }
   }
 
   @media #{$sm} {
