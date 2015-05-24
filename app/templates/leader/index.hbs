@@ -15,15 +15,12 @@
     {{/each}}
   </div>
 {{else}}
-  <div class="empty-state">
-    <span data-glyph="question-mark" class="empty-state-icon oi" aria-hidden="true"></span>
-    <p class="empty-state-message">
-      No players yet, <br/>
-      {{#link-to 'profile' class="empty-state-link"}}
-        would you like to be the first?
-      {{/link-to}}
-    </p>
-  </div>
+  {{#empty-state icon-type="question-mark"}}
+    No players yet, <br class="empty-state-linebreak"/>
+    {{#link-to 'profile' class="empty-state-link"}}
+      would you like to be the first?
+    {{/link-to}}
+  {{/empty-state}}
 {{/if}}
 
 {{outlet}}
