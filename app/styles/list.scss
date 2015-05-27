@@ -25,6 +25,8 @@ $list-item-view-height: 50px;
   //   .app-li-index         the circle surrounding the index
   //   .app-li-index::after  the number inside the circle (aka the index itself)
   //
+  //     attr(data-index)    the index is store here
+  //
   .app-li-index {
     $circle-size: ($list-item-view-height / 5) * 3;
 
