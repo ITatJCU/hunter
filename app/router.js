@@ -10,11 +10,13 @@ export default Router.map(function() {
   });
   this.resource('register', function () {
   });
-  this.route('profile');
-  this.route('loading');
+  this.resource('profile', function() {
+  });
 
   this.route('scan', function() {
     this.route('new', { path: '/:event/:code' });
     this.route('notFound', { path: '/notFound/:event/:code' });
   });
+
+  this.route('loading');
 });
