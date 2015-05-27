@@ -1,1 +1,26 @@
 {{outlet}}
+
+{{#if model.scans.length}}
+  <div class="grid scan-list">
+    {{#each model.scans as |scan index|}}
+      <div class="row">
+        <div class="list-item-col g-sm-1-5 g-ms-2-12 g-md-1-12 g-lg-1-24">
+          <div class="scan-index-circle">
+            <div class="scan-index">{{inc-number index}}</div>
+          </div>
+        </div>
+        <div class="list-item-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24 underlined">
+          <div class="scan-location">{{index}}</div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  {{#empty-state icon-type="warning"}}
+    Looks like you haven't many scans <br class="empty-state-linebreak"/>
+    {{#link-to 'leader' class="empty-state-link"}}
+      Want to go to the leader board?
+    {{/link-to}}
+  {{/empty-state}}
+{{/if}}
+
