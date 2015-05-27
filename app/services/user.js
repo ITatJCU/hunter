@@ -20,7 +20,7 @@ export default Ember.Service.extend({
       let userId    = localStorage.getItem(lookupKey);
       if (userId !== null) {
         Ember.$.getJSON(`/players/${userId}`).then(function (data) {
-          resolve(Ember.Object.create(data));
+          resolve(Ember.Object.create(data.player));
         }, function (error) {
           reject(error);
         });
