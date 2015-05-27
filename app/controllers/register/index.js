@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  userService: Ember.inject.service('user'),
+  user: Ember.inject.service('user'),
 
   loading: false,
   disableSubmit: true,
@@ -27,14 +27,14 @@ export default Ember.Controller.extend({
       //
       this.set('loading', true);
 
-      let userService = this.get('userService');
-      let playerAlias = this.get('playerAlias');
+      let user = this.get('user');
+      let alias = this.get('playerAlias');
 
       //
       // create a player
       //
-      userService.createUser(playerAlias).then((id) => {
-        return userService.setCurrentUser(id);
+      user.create(alias).then((id) => {
+        return user.setId(id);
       }, (error) => {
         //
         // handle different errors

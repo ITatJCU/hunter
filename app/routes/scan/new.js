@@ -2,13 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  userService: Ember.inject.service('user'),
+  user: Ember.inject.service('user'),
 
   beforeModel: function (transition) {
-    let userService = this.get('userService');
+    let user = this.get('user');
     let {event, code} = transition.params['scan.new'];
 
-    return userService.findCurrentUserId().then(userId => {
+    return user.find().then(userId => {
       return Ember.$.ajax({
         url: `/scan/${event}/${code}`,
         method: 'get',
