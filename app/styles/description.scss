@@ -1,0 +1,28 @@
+.description {
+  padding-left: 1em;
+
+  .attribute {
+    color: $rad-red;
+    content: ': ';
+    display: block;
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: 18px;
+    &::before {
+      content: attr(data-attr);
+      margin-right: 1ex;
+      font-style: italic;
+      min-width: 50px;
+      display: inline-block;
+    }
+    &::after {
+      content: attr(data-value);
+      font-weight: 500;
+    }
+
+    &+ .attribute {
+      margin-top: .25em;
+    }
+  }
+
+}

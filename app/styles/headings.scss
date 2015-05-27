@@ -1,0 +1,15 @@
+.app-heading {
+  padding-top: 10px;
+  color: $rad-red;
+}
+
+h2.app-heading {
+  font-size: 1.5em;
+  @media #{$ms} {
+    font-size: 2em;
+  }
+}
+
+.app-heading + .empty-state {
+  padding-top: 0;
+}
