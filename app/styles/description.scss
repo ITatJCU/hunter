@@ -1,6 +1,11 @@
 .description {
   padding-left: 1em;
 
+  //
+  // .attribute
+  //    attr(data-name)   the name of the attribute
+  //    attr(data-value)  the value of the attribute
+  //
   .attribute {
     color: $rad-red;
     display: block;

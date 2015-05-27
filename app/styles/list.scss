@@ -19,27 +19,35 @@ $list-item-view-height: 50px;
     display: inline-block;
   }
 
-  .app-li-i-circle {
+  //
+  // Application list item index
+  //
+  //   .app-li-index         the circle surrounding the index
+  //   .app-li-index::after  the number inside the circle (aka the index itself)
+  //
+  .app-li-index {
+    $circle-size: ($list-item-view-height / 5) * 3;
+
     background-color: $rad-red;
     color: $white;
-  
-    $circle-size: ($list-item-view-height / 5) * 3;
-  
     width: $circle-size;
     height: $circle-size;
     border-radius: $circle-size;
-  
     float: right;
     margin-top: 10px;
     margin-right: 15px;
-  }
+    position: relative;
 
-  .app-li-i {
-    font-family: $body-font;
-    padding-top: 6px;
-    text-align: center;
-    font-weight: 300;
-    font-size: smaller;
+    &:after {
+      position: absolute;
+      top: 6px;
+      width: $circle-size;
+      content: attr(data-index);
+      text-align: center;
+      font-weight: 300;
+      font-size: smaller;
+      font-family: $body-font;
+    }
   }
 
   @media #{$ms} {
