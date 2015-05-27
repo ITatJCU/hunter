@@ -1,4 +1,6 @@
-<span data-glyph={{icon-type}} class="empty-state-icon oi" aria-hidden="true"></span>
+{{#if icon-type}}
+  <span data-glyph={{icon-type}} class="empty-state-icon oi" aria-hidden="true"></span>
+{{/if}}
 <p class="empty-state-message">
   {{yield}}
 </p>
