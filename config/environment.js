@@ -18,6 +18,17 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  
+  
+   ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'font-src': "'self' https://fonts.gstatic.com data:",
+    'connect-src': "'self'",
+    'img-src': "'self'",
+    'style-src': "'self' https://fonts.googleapis.com",
+    'media-src': "'self'"
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -25,15 +36,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-     ENV.contentSecurityPolicy = {
-      'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline'",
-      'font-src': "'self' https://fonts.gstatic.com data:",
-      'connect-src': "'self'",
-      'img-src': "'self'",
-      'style-src': "'self' https://fonts.googleapis.com",
-      'media-src': "'self'"
-    }
+     ENV.contentSecurityPolicy['script-src'] = "'self' 'unsafe-inline'"
   }
 
   if (environment === 'test') {
