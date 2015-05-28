@@ -3,21 +3,22 @@
 <h2 class="app-heading">Player</h2>
 
 <div class="description">
-  <div class="attribute" data-attr="Alias" data-value={{model.alias}}></div>
-  <div class="attribute" data-attr="Joined" data-value={{pretty-date model.createdAt}}></div>
+  <div class="attribute" data-attr="Alias" data-value={{model.player.alias}}></div>
+  <div class="attribute" data-attr="Joined" data-value={{pretty-date model.player.createdAt}}></div>
 </div>
 
 <h2 class="app-heading">Scans</h2>
 
 {{#if model.scans.length}}
-  <div class="grid app-ls">
+  <div class="grid app-ls scans-ls">
     {{#each model.scans as |scan index|}}
       <div class="row app-li">
         <div class="app-li-col g-sm-1-5 g-ms-2-12 g-md-1-12 g-lg-1-24">
           <div class="app-li-index" data-index={{inc-number index}}></div>
         </div>
         <div class="app-li-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24 underlined">
-          <div class="scan-location">{{index}}</div>
+          <div class="scan-name">{{scan.title}}</div>
+          <div class="scan-description">{{scan.description}}</div>
         </div>
       </div>
     {{/each}}
