@@ -8,7 +8,7 @@ var app = new EmberApp();
 app.import('bower_components/open-iconic/font/css/open-iconic.css');
 
 ['eot', 'otf', 'svg', 'ttf', 'woff'].map(function (fileExtenstion) {
-  app.import(`bower_components/open-iconic/font/fonts/open-iconic.${fileExtenstion}`, {
+  app.import("bower_components/open-iconic/font/fonts/open-iconic."+fileExtenstion, {
     destDir: 'fonts'
   });
 });
