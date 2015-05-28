@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     let user = this.get('user');
     let {event, code} = transition.params['scan.new'];
 
-    return user.find().then(userId => {
+    return user.getId().then(userId => {
       return Ember.$.ajax({
         url: `/scan/${event}/${code}`,
         method: 'get',
@@ -22,7 +22,7 @@ export default Ember.Route.extend({
       // when the code is a valid scan
       //
       console.log(result);
-      this.transitionTo('leader');
+      this.transitionTo('profile');
     }, error => {
       //
       // when the code is an invalid scan

@@ -2,6 +2,7 @@
 $list-item-view-height: 50px;
 
 @import './list/leader';
+@import './list/profile';
 
 .app-ls {
 
@@ -50,12 +51,6 @@ $list-item-view-height: 50px;
       font-size: smaller;
       font-family: $body-font;
     }
-  }
-
-  @media #{$ms} {
-    max-width: 690px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
