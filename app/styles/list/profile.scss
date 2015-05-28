@@ -1,0 +1,18 @@
+
+
+.scans-ls {
+  .scan-name, .scan-description {
+    font-family: $body-font;
+  }
+
+  .scan-name {
+    padding-top: 2px;
+    font-weight: 700;
+  }
+
+  .scan-description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

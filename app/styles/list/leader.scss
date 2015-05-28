@@ -1,0 +1,55 @@
+.player-ls {
+  @media #{$ms} {
+    max-width: 690px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.player-list-header {
+  font-family: $body-font;
+  font-weight: 500;
+}
+
+
+.player-alias {
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.player-score {
+  margin-top: 3px;
+  font-weight: 700;
+}
+
+.player-alias, .player-score {
+  color: $black;
+  font-size: smaller;
+  font-family: $body-font;
+}
+
+@media #{$sm} {
+  .player-score::after {
+    color: $black;
+    content: ' QRs';
+    font-weight: 300;
+    font-style: italics;
+  }
+}
+
+@media #{$ms} {
+  .player-score {
+    float: right;
+    text-align: right;
+    margin-top: -24px;
+    margin-right: 8px;
+  }
+
+  .player-alias {
+    margin-top: 14px;
+  }
+
+  .player-score, .player-alias {
+    font-size: 1.1em;
+  }
+}

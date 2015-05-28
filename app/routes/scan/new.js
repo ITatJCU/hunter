@@ -2,13 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  userService: Ember.inject.service('user'),
+  user: Ember.inject.service('user'),
 
   beforeModel: function (transition) {
-    let userService = this.get('userService');
+    let user = this.get('user');
     let {event, code} = transition.params['scan.new'];
 
-    return userService.findCurrentUserId().then(userId => {
+    return user.getId().then(userId => {
       return Ember.$.ajax({
         url: `/scan/${event}/${code}`,
         method: 'get',
@@ -22,7 +22,7 @@ export default Ember.Route.extend({
       // when the code is a valid scan
       //
       console.log(result);
-      this.transitionTo('leader');
+      this.transitionTo('profile');
     }, error => {
       //
       // when the code is an invalid scan

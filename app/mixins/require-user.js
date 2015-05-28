@@ -1,17 +1,17 @@
 import Ember from 'ember';
 
 /**
- * Will transition to the registation route if no
- * user is setup at the moment.
- * @mixin
+ * A mixin for routes that will transition to the
+ * registation route if no user is setup at the moment.
+ * @mixin RequireUser
  */
 export default Ember.Mixin.create({
 
-  __RequireUserMixin_userService: Ember.inject.service('user'),
+  __RequireUserMixin_user: Ember.inject.service('user'),
 
   beforeModel: function (transition) {
-    let userService = this.get('__RequireUserMixin_userService');
-    return userService.userExists().then((exists) => {
+    let user = this.get('__RequireUserMixin_user');
+    return user.exists().then((exists) => {
       if (exists) {
         return null;
       }

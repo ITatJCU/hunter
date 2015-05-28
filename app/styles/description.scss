@@ -1,0 +1,31 @@
+.description {
+  padding-left: 1em;
+
+  //
+  // .attribute
+  //    attr(data-name)   the name of the attribute
+  //    attr(data-value)  the value of the attribute
+  //
+  .attribute {
+    color: $rad-red;
+    display: block;
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: 18px;
+    &::before {
+      content: attr(data-attr) ":";
+      margin-right: 1ex;
+      min-width: 55px;
+      display: inline-block;
+    }
+    &::after {
+      content: attr(data-value);
+      font-weight: 500;
+    }
+
+    &+ .attribute {
+      margin-top: .25em;
+    }
+  }
+
+}

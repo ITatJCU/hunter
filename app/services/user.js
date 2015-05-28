@@ -14,15 +14,28 @@ export default Ember.Service.extend({
    * Finds the current user
    * @return {Promise}
    */
-  findCurrentUser: function () {
-    return Ember.RSVP.resolve(null);
+  find: function () {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      let lookupKey = this.get('__userLookUpKey');
+      let userId    = localStorage.getItem(lookupKey);
+      if (userId !== null) {
+        Ember.$.getJSON(`/players/${userId}`).then(function (data) {
+          resolve(Ember.Object.create(data.player));
+        }, function (error) {
+          reject(error);
+        });
+      }
+      else {
+        reject(new Error('user doesn\'t exist dingus'));
+      }
+    });
   },
 
   /**
    * Finds the id of the current user
    * @return {Promise}
    */
-  findCurrentUserId: function () {
+  getId: function () {
     return new Ember.RSVP.Promise((resolve, reject) => {
       let lookupKey = this.get('__userLookUpKey');
       let userId    = localStorage.getItem(lookupKey);
@@ -40,7 +53,7 @@ export default Ember.Service.extend({
    * Determines if a user exists
    * @return {Promise}
    */
-  userExists: function () {
+  exists: function () {
     return new Ember.RSVP.Promise((resolve) => {
       let lookupKey = this.get('__userLookUpKey');
       let userId    = localStorage.getItem(lookupKey);
@@ -52,7 +65,7 @@ export default Ember.Service.extend({
    * This person never existed...
    * @return {Promise}
    */
-  forgetUser: function () {
+  forget: function () {
     return new Ember.RSVP.Promise((resolve, reject) => {
       let lookupKey = this.get('__userLookUpKey');
       let userId    = localStorage.getItem(lookupKey);
@@ -70,7 +83,7 @@ export default Ember.Service.extend({
    * creates a user
    * @return {Promise}
    */
-  createUser: function (name) {
+  create: function (name) {
     //
     // would use ember data here but the server api
     // doesn't really accomodate for this, and fair
@@ -98,7 +111,7 @@ export default Ember.Service.extend({
    * sets the current user as the id
    * @return {Promise}
    */
-  setCurrentUser: function (id) {
+  setId: function (id) {
     return new Ember.RSVP.Promise((resolve, reject) => {
       let lookupKey = this.get('__userLookUpKey');
       if (typeof id === 'string') {
