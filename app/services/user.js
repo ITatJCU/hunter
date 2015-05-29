@@ -1,6 +1,8 @@
+import ENV from '../config/environment';
 import Ember from 'ember';
 import $ from 'jquery';
 
+let namespace = ENV.APP.namespace || '';
 
 /**
  * abstraction over user funcitonality
@@ -22,7 +24,7 @@ export default Ember.Service.extend({
         //
         // TODO replace with ember data
         //
-        Ember.$.getJSON(`/api/players/${userId}`).then(function (data) {
+        Ember.$.getJSON(`${namespace}/players/${userId}`).then(function (data) {
           resolve(Ember.Object.create(data.player));
         }, function (error) {
           reject(error);
@@ -98,7 +100,7 @@ export default Ember.Service.extend({
       //
       let deffered = $.ajax({
         type: "post",
-        url: '/api/players',
+        url: ENV.APP.namespace ? `${namespace}/players` : '/players',
         datatype: 'json',
         contentType: 'application/json',
         data: JSON.stringify({ alias: name }),

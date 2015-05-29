@@ -18,9 +18,9 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-  
-  
-   ENV.contentSecurityPolicy = {
+
+
+  ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self'",
     'font-src': "'self' https://fonts.gstatic.com data:",
@@ -36,8 +36,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-     ENV.contentSecurityPolicy['script-src'] = "'self' 'unsafe-inline'"
-     ENV.namespace = ''
+    ENV.APP.STATIC_EVENT_ID = '55679f179ae1aa3656453bbd';
+    ENV.contentSecurityPolicy['script-src'] = "'self' 'unsafe-inline'"
+    ENV.namespace = '';
   }
 
   if (environment === 'test') {
@@ -53,7 +54,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-     ENV.APP.namespace = 'api'
+    ENV.APP.STATIC_EVENT = process.env['STATIC_EVENT_ID'] || '55679f179ae1aa3656453bbd';
+    ENV.APP.namespace = 'api'
   }
 
   return ENV;
