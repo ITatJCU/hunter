@@ -1,4 +1,3 @@
-import ENV from '../config/environment';
 import DS from 'ember-data';
 
 let config = {
