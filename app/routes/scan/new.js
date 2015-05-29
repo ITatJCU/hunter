@@ -11,7 +11,7 @@ export default Ember.Route.extend({
     return user.getId().then(userId => {
       return Ember.$.ajax({
         url: `/scan/${event}/${code}`,
-        method: 'get',
+        method: 'put',
         headers: {
           player: userId
         }
