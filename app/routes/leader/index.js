@@ -1,4 +1,6 @@
+import ENV from '../../config/environment';
 import Ember from 'ember';
+
 
 export default Ember.Route.extend({
   model: function () {
