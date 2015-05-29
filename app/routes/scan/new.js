@@ -1,4 +1,9 @@
+import ENV from '../../config/environment';
 import Ember from 'ember';
+
+
+let namespace = ENV.APP.namespace || '';
+
 
 export default Ember.Route.extend({
 
@@ -10,7 +15,7 @@ export default Ember.Route.extend({
 
     return user.getId().then(userId => {
       return Ember.$.ajax({
-        url: `/scan/${event}/${code}`,
+        url: `${namespace}/scan/${event}/${code}`,
         data: { message: 'change this to a post please' },
         method: 'put',
         headers: {
