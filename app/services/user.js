@@ -19,7 +19,10 @@ export default Ember.Service.extend({
       let lookupKey = this.get('__userLookUpKey');
       let userId    = localStorage.getItem(lookupKey);
       if (userId !== null) {
-        Ember.$.getJSON(`/players/${userId}`).then(function (data) {
+        //
+        // TODO replace with ember data
+        //
+        Ember.$.getJSON(`/api/players/${userId}`).then(function (data) {
           resolve(Ember.Object.create(data.player));
         }, function (error) {
           reject(error);
