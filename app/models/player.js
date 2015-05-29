@@ -10,7 +10,13 @@ export default DS.Model.extend({
    * @member {number}
    */
   score: function () {
-    return this.get('scans').length;
+    let scans = this.get('scans');
+    if (typeof scans !== 'undefined') {
+      return this.get('scans').length;
+    }
+    else {
+      return 0;
+    }
   }.property('scans')
 
 });
