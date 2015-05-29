@@ -28,7 +28,7 @@ export default Ember.Route.extend({
       // when the code is a valid scan
       //
       console.log(result);
-      this.transitionTo('profile');
+      this.transitionTo('leader');
     }, error => {
       //
       // when the code is an invalid scan
