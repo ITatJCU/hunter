@@ -54,7 +54,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.STATIC_EVENT = process.env['STATIC_EVENT_ID'] || '55679f179ae1aa3656453bbd';
+    ENV.APP.STATIC_EVENT_ID = process.env['STATIC_EVENT_ID'] || '55679f179ae1aa3656453bbd';
     ENV.APP.namespace = 'api'
   }
 
