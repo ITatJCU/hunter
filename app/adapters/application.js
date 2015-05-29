@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 
+
 let config = {
   namespace: 'api'
 };

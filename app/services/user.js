@@ -98,7 +98,7 @@ export default Ember.Service.extend({
       //
       let deffered = $.ajax({
         type: "post",
-        url: '/players',
+        url: '/api/players',
         datatype: 'json',
         contentType: 'application/json',
         data: JSON.stringify({ alias: name }),
