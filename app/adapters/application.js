@@ -2,7 +2,7 @@ import ENV from '../config/environment';
 import DS from 'ember-data';
 
 let config = {
-  namespace: ''
+  namespace: 'api/'
 };
 
 console.log(ENV);

@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'hunter',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -52,9 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    var backend = process.env['backend'] || 'http://54.66.211.166:8081';
-    ENV.host = backend;
-    ENV.contentSecurityPolicy['connect-src'] += ' ' + backend;
+
   }
 
   return ENV;
