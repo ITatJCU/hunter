@@ -1,4 +1,3 @@
-import ENV from '../../config/environment';
 import Ember from 'ember';
 
 
