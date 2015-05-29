@@ -98,7 +98,7 @@ export default Ember.Service.extend({
       //
       // jquery deferred isn't a promise, common misconception
       //
-      let deffered = $.ajax({
+      let deffered = Ember.$.ajax({
         type: "post",
         url: ENV.APP.namespace ? `${namespace}/players` : '/players',
         datatype: 'json',

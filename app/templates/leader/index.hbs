@@ -7,7 +7,13 @@
         </div>
         <div class="app-li-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24 underlined">
           <div class="player-alias">{{player.alias}}</div>
-          <div class="player-score">{{player.score}}</div>
+          <div class="player-score">
+
+            {{#if player.duration}}
+              <strong>{{player.duration}}</strong>ms
+            {{/if}}
+            <strong>{{player.numberOfScans}}</strong> QRs
+          </div>
         </div>
       </div>
     {{/each}}

@@ -19,7 +19,7 @@
 
 .player-score {
   margin-top: 3px;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .player-alias, .player-score {
@@ -30,10 +30,10 @@
 
 @media #{$sm} {
   .player-score::after {
-    color: $black;
-    content: ' QRs';
-    font-weight: 300;
-    font-style: italics;
+    // color: $black;
+    // content: ' QRs';
+    // font-weight: 300;
+    // font-style: italics;
   }
 }
 
