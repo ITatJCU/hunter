@@ -11,6 +11,7 @@ export default Ember.Route.extend({
     return user.getId().then(userId => {
       return Ember.$.ajax({
         url: `/scan/${event}/${code}`,
+        data: { message: 'change this to a post please' },
         method: 'put',
         headers: {
           player: userId
