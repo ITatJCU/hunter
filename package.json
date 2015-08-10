@@ -14,7 +14,7 @@
   },
   "repository": "",
   "engines": {
-    "iojs": "v1.8.1"
+    "iojs": "1.8.1"
   },
   "author": "",
   "license": "MIT",
