@@ -59,7 +59,7 @@ export default Ember.Controller.extend({
           //
           // Default back to homepage
           //
-          this.transitionToRoute('index');
+          this.transitionToRoute('leader');
         }
       });
     }
