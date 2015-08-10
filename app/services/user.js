@@ -1,6 +1,6 @@
 import ENV from '../config/environment';
 import Ember from 'ember';
-import $ from 'jquery';
+
 
 let namespace = ENV.APP.namespace || '';
 
