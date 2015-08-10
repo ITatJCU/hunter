@@ -36,10 +36,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.STATIC_EVENT_ID = '55679f179ae1aa3656453bbd';
+    ENV.APP.STATIC_EVENT_ID = '55679e6c9ae1aa3656453bbc';
     ENV.contentSecurityPolicy['script-src'] = "'self' 'unsafe-inline'"
     ENV.namespace = '';
   }
+
 
   if (environment === 'test') {
     // Testem prefers this...
