@@ -7,20 +7,18 @@
   <div class="attribute" data-attr="Joined" data-value={{pretty-date model.player.createdAt}}></div>
 </div>
 
-{{!--
-
-<h2 class="app-heading">Scans</h2>
+<h2 class="app-heading">Scanned so far</h2>
 
 {{#if showList}}
   <div class="grid app-ls scans-ls">
-    {{#each model.scans as |scan index|}}
-      <div class="row app-li">
+    {{#each model.codes as |code index|}}
+     <div class="row app-li">
         <div class="app-li-col g-sm-1-5 g-ms-2-12 g-md-1-12 g-lg-1-24">
           <div class="app-li-index" data-index={{inc-number index}}></div>
         </div>
-        <div class="app-li-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24 underlined">
-          <div class="scan-name">{{scan.title}}</div>
-          <div class="scan-description">{{scan.description}}</div>
+        <div class="app-li-col g-sm-7-10 g-ms-8-12 g-md-9-12 g-lg-23-24">
+          <div class="scan-name">{{code.title}}</div>
+          <div class="scan-description">{{code.description}}</div>
         </div>
       </div>
     {{/each}}
@@ -33,5 +31,3 @@
     {{/link-to}}
   {{/empty-state}}
 {{/if}}
-
---}}

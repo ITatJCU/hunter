@@ -8,8 +8,8 @@ export default Ember.Controller.extend({
   showList: false,
 
   updateShowList: function () {
-    let hasItems = !!this.get('model.scans.length');
+    let hasItems = !!this.get('model.codes.length');
     this.set('showList', hasItems);
-  }.observes('model.scans.length')
+  }.observes('model.codes.length')
 
 });

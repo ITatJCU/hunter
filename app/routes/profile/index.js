@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   user: Ember.inject.service('user'),
   ajax: Ember.inject.service('ajax'),
 
-  model: function () {
+  model () {
     let { user, ajax } = this.getProperties('user', 'ajax');
     return user.find()
       .then(player => RSVP.hash({
@@ -17,7 +17,6 @@ export default Ember.Route.extend({
         codes: RSVP
           .all(player.get('scans').map(scan => ajax.get(`/codes/${scan.code}`)))
           .then(codes => codes.map(code => Ember.Object.create(code.code))) }))
-      .then(model => console.log(model) || model)
       .then(model => Ember.Object.create(model));
   }
 });
