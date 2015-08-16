@@ -25,10 +25,10 @@
     position: relative;
     z-index: 2;
 
-    padding: 35vh 0em;
+    padding-top: 35vh;
 
     @media #{$horizontal-phone} {
-      padding: 20vh 0em;
+      padding-top: 20vh;
     }
   }
 

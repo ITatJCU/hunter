@@ -1,8 +1,5 @@
-import ENV from '../config/environment';
 import Ember from 'ember';
 
-
-let namespace = ENV.APP.namespace || '';
 
 /**
  * abstraction over user funcitonality
@@ -11,6 +8,7 @@ let namespace = ENV.APP.namespace || '';
 export default Ember.Service.extend({
 
   __userLookUpKey: 'user_id',
+  ajax: Ember.inject.service('ajax'),
 
   /**
    * Finds the current user
@@ -24,7 +22,7 @@ export default Ember.Service.extend({
         //
         // TODO replace with ember data
         //
-        Ember.$.getJSON(`${namespace}/players/${userId}`).then(function (data) {
+        this.get('ajax').get(`/players/${userId}`).then(data => {
           resolve(Ember.Object.create(data.player));
         }, function (error) {
           reject(error);
@@ -94,22 +92,9 @@ export default Ember.Service.extend({
     // doesn't really accomodate for this, and fair
     // enough, due to sercurity related stuff.
     //
-    return new Ember.RSVP.Promise((resolve, reject) => {
-      //
-      // jquery deferred isn't a promise, common misconception
-      //
-      let deffered = Ember.$.ajax({
-        type: "post",
-        url: ENV.APP.namespace ? `${namespace}/players` : '/players',
-        datatype: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify({ alias: name }),
-      });
-      deffered.done(resolve);
-      deffered.fail(reject);
-    }).then((data) => {
-      return data._id;
-    });
+    return this.get('ajax')
+      .post('/player', { alias: name })
+      .then(data => data._id);
   },
 
   /**

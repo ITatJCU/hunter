@@ -1,14 +1,23 @@
 import Ember from 'ember';
 
+
+const { RSVP } = Ember;
+
+
 export default Ember.Route.extend({
 
   user: Ember.inject.service('user'),
+  ajax: Ember.inject.service('ajax'),
 
   model: function () {
-    return this.get('user').find().then(user =>  Ember.RSVP.hash({
-      player: user,
-    //  scans: Ember.RSVP.all(user.get('scans')
-    //    .map(code => this.store.find('code', code.code)))
-    })).then(model => Ember.Object.create(model));
+    let { user, ajax } = this.getProperties('user', 'ajax');
+    return user.find()
+      .then(player => RSVP.hash({
+        player: player,
+        codes: RSVP
+          .all(player.get('scans').map(scan => ajax.get(`/codes/${scan.code}`)))
+          .then(codes => codes.map(code => Ember.Object.create(code.code))) }))
+      .then(model => console.log(model) || model)
+      .then(model => Ember.Object.create(model));
   }
 });
