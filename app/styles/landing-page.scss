@@ -25,10 +25,10 @@
     position: relative;
     z-index: 2;
 
-    padding-top: 35vh;
+    padding-top: 30vh;
 
     @media #{$horizontal-phone} {
-      padding-top: 20vh;
+      padding-top: 10vh;
     }
   }
 
@@ -84,6 +84,20 @@
 
     + .call-to-action {
       margin-left: 10px;
+    }
+  }
+
+  .call-to-action-lg {
+    @extend .call-to-action;
+    width: 260px;
+    @media #{$sm} {
+      width: 245px;
+    }
+  }
+
+  .action-group {
+    + .action-group {
+      margin-top: 10px;
     }
   }
 }

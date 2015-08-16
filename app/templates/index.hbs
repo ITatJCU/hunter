@@ -3,8 +3,13 @@
     {{appName}}!
   </h1>
   <div class="divider"></div>
-  {{#link-to 'leader' class="call-to-action"}}Leader{{/link-to}}
-  {{#link-to 'profile' class="call-to-action"}}You{{/link-to}}
+  <div class="action-group">
+    {{#link-to 'leader' class="call-to-action"}}Leader{{/link-to}}
+    {{#link-to 'profile' class="call-to-action"}}You{{/link-to}}
+  </div>
+  <div class="action-group">
+    {{#link-to 'about' class="call-to-action-lg"}}About{{/link-to}}
+  </div>
 </div>
 
 {{outlet}}

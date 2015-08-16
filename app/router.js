@@ -19,4 +19,5 @@ export default Router.map(function() {
   });
 
   this.route('loading');
+  this.route('about', function() {});
 });

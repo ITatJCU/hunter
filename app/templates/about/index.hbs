@@ -1,0 +1,120 @@
+<section class="text-section">
+  <h2 class="app-heading">FAQ</h2>
+  <section class="text-section">
+    <h3 class="app-heading">How to Play?</h3>
+    <p class="text-body">
+      Each player has a <em>collected</em> number of scans linked to their player id,
+      and a time stamp for each. The server tasked with tracking all players compares
+      the total number of codes <em>collected</em> and a duration of time between the
+      first and last code scanned.
+    </p>
+    <p class="text-body">
+      The players with the most scans in the shortest period of time are ranked highest.
+    </p>
+  </section>
+
+  <section class="text-section">
+    <h3 class="app-heading">What if I scan the same code twice?</h3>
+    <p class="text-body">
+      In most cases, nothing, but the game keeps track of the time between the first
+      and last unique scans, so rescanning the first or last code will shorten or
+      lengthen your time respectively.
+    </p>
+    <p class="text-body">
+      <em>Find all the codes and race between them to reduce your time!</em>
+    </p>
+  </section>
+
+  <section class="text-section">
+    <h3 class="app-heading">Why don't I need an account?</h3>
+    <p class="text-body">
+      The Web client generates a universally unique identifier (UUID) and stores it
+      locally on the device using a cookie. Every time the application is reloaded,
+      the cookie containing the UUID is restored and associated player information
+      is retrieved from the server.
+    </p>
+    <p class="text-body">
+      We do not store or use any personal data. The game only keeps track of the alias
+      you set
+    </p>
+  </section>
+
+  <section class="text-section">
+    <h3 class="app-heading">Is this a student project?</h3>
+    <p class="text-body">
+      We came up with a rough idea in a brainstorming session, then a motivated
+      student volunteered to implement QRHunt as a pet project.
+    </p>
+  </section>
+
+  <section class="text-section">
+    <h3 class="app-heading">So, I could learn to do this?</h3>
+    <p class="text-body">
+      Absolutely! JCU's Bachelor of Information Technology teaches the sort of
+      skills and attitudes needed and used by the developer of QRHunt.
+    </p>
+  </section>
+</section>
+
+<section class="text-section">
+  <h2 class="app-heading">Dev related questions</h2>
+
+  <section class="text-section">
+    <h3 class="app-heading">What languages and frameworks are used?</h3>
+
+    <section class="text-section">
+      <h4 class="app-heading">The Client</h4>
+      <p class="text-body">
+        The client makes use of a relatively new Web-oriented framework called
+        <a href="http://emberjs.com" target="_blank" rel="Ember Website">
+        Ember.js</a> with
+        <a href="http://www.ember-cli.com" target="_blank" rel="Ember CLI web site">
+        Ember CLI</a> as the build management system, and for the styling a
+        css preprocessor called
+        <a href="http://sass-lang.com" target="_blank" rel="SASS Website">SASS</a>
+        was used.
+      </p>
+    </section>
+
+    <section class="text-section">
+      <h4 class="app-heading">The Server</h4>
+      <p class="text-body">
+        The server is written in JavaScript for the synchronous event-driven
+        framework <a href="http://nodejs.org" target="_blank" rel="node">
+        Node.js</a>.
+      </p>
+      <p class="text-body">
+        Development time was reduced by utilising the
+        <a href="http://mcavage.me/node-restify/" target="_blank" rel="restify">restify</a> and
+        <a href="http://sequelizejs.com" target="_blank" rel="sequelize">Sequelize</a> modules for Node.js.
+      </p>
+    </section>
+  </section>
+
+  <section class="text-section">
+    <h3 class="app-heading">Is the source code available?</h3>
+    <p class="text-body">
+      All source code for the client and server are available on GitHub at:
+      <a href="http://github.com/ITatJCU/hunter" target="_blank" rel="GitHub Client">QR Hunt Client</a>
+      and
+      <a href="http://github.com/ITatJCU/hunter-server" target="_blank" rel="GitHub Server">QR Hunt Server</a>
+      respectively.
+    </p>
+  </section>
+
+  <section class="text-section">
+    <h3 class="app-heading">What about the QR codes?</h3>
+    <p class="text-body">
+      <a href="http://en.wikipedia.org/wiki/QR_code">QR codes</a> have been
+      around since 1994, and are a very effective way of encoding information.
+      You can generate your own QR code for a URL using free websites like
+      <a href="http://www.qrcode-monkey.com/">QR-Code-Monkey</a>.
+    </p>
+    <p class="text-body">
+      Each of our QR Codes points to a unique URL in the QRHunt game, either
+      an information page like this, or a specific code that you need to collect.
+    </p>
+  </section>
+</section>
+
+{{outlet}}

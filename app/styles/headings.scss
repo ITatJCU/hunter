@@ -10,6 +10,20 @@ h2.app-heading {
   }
 }
 
+h3.app-heading {
+  font-size: 1.2em;
+  @media #{$ms} {
+    font-size: 1.5em;
+  }
+}
+
+h3.app-heading {
+  font-size: 1.1em;
+  @media #{$ms} {
+    font-size: 1.3em;
+  }
+}
+
 .app-heading + .empty-state {
   padding-top: 0;
 }
