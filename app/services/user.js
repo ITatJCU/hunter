@@ -93,7 +93,7 @@ export default Ember.Service.extend({
     // enough, due to sercurity related stuff.
     //
     return this.get('ajax')
-      .post('/player', { alias: name })
+      .post('/players', { alias: name })
       .then(data => data._id);
   },
 

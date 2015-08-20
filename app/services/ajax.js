@@ -23,7 +23,7 @@ export default Ember.Service.extend({
   post (url, data) {
     const trimmed = this.__trimLeadingSlash(url);
     return $.ajax({
-      type: "get",
+      type: "post",
       url: `${namespace}/${trimmed}`,
       datatype: 'json',
       contentType: 'application/json',
