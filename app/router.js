@@ -16,6 +16,7 @@ export default Router.map(function() {
   this.route('scan', function() {
     this.route('new', { path: '/:event/:code' });
     this.route('notFound', { path: '/notFound/:event/:code' });
+    this.route('about', { path: '/about/:code' });
   });
 
   this.route('loading');

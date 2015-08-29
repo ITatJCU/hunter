@@ -4,6 +4,12 @@ export default Ember.View.extend({
 
   pageTitle: 'Untitled',
 
+  _pageTitle: function () {
+    return this.get('controller.pageTitle')
+        || this.get('pageTitle')
+        || 'Untitled';
+  }.property('overloadedTitle', 'defaultPageTitle'),
+
   templateName: 'default-layout',
 
   scrollFadeThreshold: 25,

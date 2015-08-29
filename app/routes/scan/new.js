@@ -7,6 +7,7 @@ let namespace = ENV.APP.namespace || '';
 
 export default Ember.Route.extend({
 
+  ajax: Ember.inject.service('ajax'),
   user: Ember.inject.service('user'),
 
   beforeModel: function (transition) {
@@ -27,8 +28,7 @@ export default Ember.Route.extend({
       //
       // when the code is a valid scan
       //
-      console.log(result);
-      this.transitionTo('leader');
+      return this.get('ajax').get(`/codes/${code}`);
     }, error => {
       //
       // when the code is an invalid scan
@@ -36,6 +36,11 @@ export default Ember.Route.extend({
       let errorResponse = JSON.parse(error.responseText);
       console.error(`Hunter-Server: ${errorResponse.message}`);
       this.transitionTo('scan.notFound', event, code);
+    })
+    .then(code => {
+      const model = Ember.Object.create(code.code);
+      this.transitionTo('scan.about', model);
+      this.transitionTo('scan.about', code.code._id);
     });
   }
 

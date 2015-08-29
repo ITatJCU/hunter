@@ -1,0 +1,24 @@
+.app-call-to-action {
+  $font-size: 17px;
+  color: white;
+  background-color: $rad-red;
+
+  font-size: $font-size;
+  font-family: $body-font;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: $font-size;
+  padding-bottom: $font-size;
+  display: block;
+  border-radius: $input-border-radius;
+
+  @media #{$md} {
+    width: 300px;
+    margin-left: calc(50% - 150px);
+    margin-right: calc(50% - 150px);
+  }
+}
